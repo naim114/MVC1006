@@ -3,14 +3,18 @@
     public class Person
     {
         public string Name { get; set; }
+        public string Gender { get; set; }
         public double Weight { get; set; }
         public double Height { get; set; }
+        public bool Smoking { get; set; }
         public bool Vaccinated { get; set; }
 
         public double Bmi { 
             get {
                 return Weight / Math.Pow(Height, 2);
             }
+
+            set { }
         }
 
         public string BmiClass {
@@ -24,6 +28,19 @@
                 else
                     return "Obese";
             }
+
+            set { }
         }
+    }
+
+    public class Employee
+    {
+        public int EmpId { get; set; }
+        public string Name { get; set; }
+        public string Gender { get; set; }
+        public string Position { get; set; }
+        public DateTime StartDate { get; set; }
+        public string Campus { get; set; }
+        public double Salary { get; set; }
     }
 }

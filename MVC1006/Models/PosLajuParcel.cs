@@ -35,6 +35,8 @@ namespace MVC1006.Models
             {
                 return rates[IndexWeight, IndexZone];
             }
+
+            set { }
         }
 
         public IDictionary<int, string> DictWeight
@@ -81,5 +83,27 @@ namespace MVC1006.Models
             { 21, 34.5, 41.0},
             { 24, 39.0, 46.0},
         };
+
+        public DateTime ParcelDateTime
+        {
+            get
+            {
+                return DateTime.Now;
+            }
+
+            set { }
+        }
+
+        public string ParcelId
+        {
+            get
+            {
+                string hexTicks = DateTime.Now.Ticks.ToString("X");
+
+                return hexTicks.Substring(hexTicks.Length - 15, 10);
+            }
+
+            set { }
+        }
     }
 }

@@ -1,13 +1,24 @@
 ﻿@model MVC1006.Models.PosLajuParcel
 
 <head>
-    <title>Pos Laju Form</title>
+    <title>Pos Laju Invoice</title>
     <link href="~/css/PosLaju.css" rel="stylesheet" />
 </head>
 
 <body>
     @using (Html.BeginForm())
     {
+        <h3>Pos Laju Invoice</h3>
+        <br />
+        <p>
+            <label>Parcel Id: </label>
+            @Html.DisplayFor(x => x.ParcelId)
+        </p>
+        <p>
+            <label>Date and time: </label>
+            @Html.DisplayFor(x => x.ParcelDateTime)
+        </p>
+
         <h5>Sender Information</h5>
         <p>
             <label>Sender name: </label>
@@ -52,7 +63,7 @@
 
         <p>
             <label>Zone: </label>
-            @Html.DisplayFor(x => x.DictWeight[Model.IndexWeight])
+            @Html.DisplayFor(x => x.DictWeight[Model.IndexZone])
         </p>
 
         <p>

@@ -3,8 +3,10 @@
 @using (Html.BeginForm())
 {
     <p>Name: @Model.Name</p>
+    <p>Gender: @Model.Gender</p>
     <p>Weight: @Model.Weight.ToString("n1")</p>
     <p>Height: @Model.Height.ToString("n2")</p>
+    <p>Smoking: @Model.Smoking</p>
     <p>Vaccinated: @Model.Vaccinated</p>
     <p>BMI: @Model.Bmi.ToString("n1")</p>
     <p>BMI class: @Model.BmiClass</p>
