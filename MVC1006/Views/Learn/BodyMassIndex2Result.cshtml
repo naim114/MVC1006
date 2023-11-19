@@ -1,0 +1,11 @@
+﻿@model MVC1006.Models.Person
+
+@using (Html.BeginForm())
+{
+    <p>Name: @Model.Name</p>
+    <p>Weight: @Model.Weight.ToString("n1")</p>
+    <p>Height: @Model.Height.ToString("n2")</p>
+    <p>Vaccinated: @Model.Vaccinated</p>
+    <p>BMI: @Model.Bmi.ToString("n1")</p>
+    <p>BMI class: @Model.BmiClass</p>
+}

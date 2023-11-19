@@ -1,0 +1,72 @@
+﻿@model MVC1006.Models.PosLajuParcel
+
+<head>
+    <title>Pos Laju Form</title>
+    <link href="~/css/PosLaju.css" rel="stylesheet" />
+</head>
+
+<body>
+    @using (Html.BeginForm())
+    {
+        <h5>Sender Information</h5>
+        <p>
+            <label>Sender name: </label>
+            @Html.TextBoxFor(x => x.SenderName)
+            @Html.ValidationMessageFor(x=> x.SenderName)
+        </p>
+        <p>
+            <label>Sender address: </label>
+            @Html.TextBoxFor(x => x.SenderAddress)
+            @Html.ValidationMessageFor(x=> x.SenderAddress)
+        </p>
+        <p>
+            <label>Sender phone: </label>
+            @Html.TextBoxFor(x => x.SenderPhone)
+            @Html.ValidationMessageFor(x=> x.SenderPhone)
+        </p>
+        <p>
+            <label>Sender email: </label>
+            @Html.TextBoxFor(x => x.SenderEmail)
+            @Html.ValidationMessageFor(x=> x.SenderEmail)
+        </p>
+
+        <h5>Receiver Information</h5>
+        <p>
+            <label>Receiver name: </label>
+            @Html.TextBoxFor(x => x.ReceiverName)
+            @Html.ValidationMessageFor(x=> x.ReceiverName)
+        </p>
+        <p>
+            <label>Receiver address: </label>
+            @Html.TextBoxFor(x => x.ReceiverAddress)
+            @Html.ValidationMessageFor(x=> x.ReceiverAddress)
+        </p>
+        <p>
+            <label>Receiver phone: </label>
+            @Html.TextBoxFor(x => x.ReceiverPhone)
+            @Html.ValidationMessageFor(x=> x.ReceiverPhone)
+        </p>
+        <p>
+            <label>Receiver email: </label>
+            @Html.TextBoxFor(x => x.ReceiverEmail)
+            @Html.ValidationMessageFor(x=> x.ReceiverEmail)
+        </p>
+
+        <h5>Parcel Information</h5>
+        <p>
+            <label>Weight: </label>
+            @Html.DropDownListFor(x=> x.IndexWeight, new SelectList(Model.DictWeight, "Key", "Value"), "Select weight: ")
+            @Html.ValidationMessageFor(x=> x.IndexWeight)
+        </p>
+
+        <p>
+            <label>Zone: </label>
+            @Html.DropDownListFor(x=> x.IndexZone, new SelectList(Model.DictZone, "Key", "Value"), "Select zone: ")
+            @Html.ValidationMessageFor(x=> x.IndexZone)
+        </p>
+
+        <p>
+            <input type="submit" value="Submit" />
+        </p>
+    }
+</body>
