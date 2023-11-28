@@ -5,7 +5,14 @@
 
 <h3>List of Employee</h3>
 
-<table border="1" width="100%"> 
+<p>Total employees: @ViewBag.CountAll</p>
+<p>Total female employees: @ViewBag.CountFemale</p>
+<p>Total male employees: @ViewBag.CountMale</p>
+<p>Average salary: @ViewBag.AverageSalary.ToString("c2")</p>
+<p>Average salary male: @ViewBag.AverageSalaryMale.ToString("c2")</p>
+<p>Average salary female: @ViewBag.AverageSalaryFemale.ToString("c2")</p>
+
+<table border="1" width="100%">
     <tr>
         <th>#</th>
         <th>Emp Id</th>
@@ -17,7 +24,7 @@
         <th>Salary</th>
     </tr>
 
-    @foreach (var employee in ViewBag.OrderCampusName)
+    @foreach (var employee in Model)
     {
         <tr>
             <th>@row</th>

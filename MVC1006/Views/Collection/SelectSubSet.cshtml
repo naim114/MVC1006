@@ -5,29 +5,21 @@
 
 <h3>List of Employee</h3>
 
-<table border="1" width="100%"> 
+<table border="1" width="100%">
     <tr>
         <th>#</th>
         <th>Emp Id</th>
         <th>Name</th>
-        <th>Gender</th>
         <th>Position</th>
-        <th>StartDate</th>
-        <th>Campus</th>
-        <th>Salary</th>
     </tr>
 
-    @foreach (var employee in ViewBag.OrderCampusName)
+    @foreach (var employee in Model)
     {
         <tr>
             <th>@row</th>
             <th>@employee.EmpId</th>
             <th>@employee.Name</th>
-            <th>@employee.Gender</th>
             <th>@employee.Position</th>
-            <th>@employee.StartDate.ToShortDateString()</th>
-            <th>@employee.Campus</th>
-            <th>@employee.Salary.ToString("C")</th>
         </tr>
         row++;
     }

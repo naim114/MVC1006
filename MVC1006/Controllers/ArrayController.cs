@@ -13,12 +13,20 @@ namespace MVC1006.Controllers
         public IActionResult IntegerArray() {
             int[] numbers = { 6, 3, 1, 2, 5, 4 };
             ViewBag.Numbers = numbers;
+            ViewBag.CountNumber = numbers.Count();
+            ViewBag.MaxNumber = numbers.Max();
+            ViewBag.MinNumber = numbers.Min();
+            ViewBag.SumNumber = numbers.Sum();
+            ViewBag.AverageNumber = numbers.Average();
+
             return View();
         }
 
         public IActionResult StringArray() {
             string[] pets = { "cat", "dog", "rabbit", "hamster", "turtle" };
             ViewBag.Pets = pets;
+            ViewBag.Result1 = pets.OrderBy(x => x);
+            ViewBag.Result2 = pets.OrderByDescending(x => x);
             return View();
         }
 

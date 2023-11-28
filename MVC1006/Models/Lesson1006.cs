@@ -42,5 +42,9 @@
         public DateTime StartDate { get; set; }
         public string Campus { get; set; }
         public double Salary { get; set; }
+
+        // Newly added properties
+        public double Deduction { get; set; } 
+        public double NetSalary { get; set; }
     }
 }
