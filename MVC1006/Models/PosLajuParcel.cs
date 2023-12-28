@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace MVC1006.Models
 {
@@ -6,29 +7,40 @@ namespace MVC1006.Models
     {
         // Sender
         [Required]
+        [Display(Name = "Sender Name")]
         public string SenderName { get; set; }
         [Required]
+        [Display(Name = "Sender Address")]
         public string SenderAddress { get; set; }
         [Required]
+        [Display(Name = "Sender Phone")]
         public string SenderPhone { get; set; }
+        [Display(Name = "Sender Email")]
         public string SenderEmail { get; set; }
 
         // Receiver
         [Required]
+        [Display(Name = "Receiver Name")]
         public string ReceiverName { get; set; }
         [Required]
+        [Display(Name = "Receiver Address")]
         public string ReceiverAddress { get; set; }
         [Required]
+        [Display(Name = "Receiver Phone")]
         public string ReceiverPhone { get; set; }
+        [Display(Name = "Receiver Email")]
         public string ReceiverEmail { get; set; }
 
         // Parcel
         [Required]
+        [Display(Name = "Weight")]
         public int IndexWeight { get; set; }
         [Required]
+        [Display(Name = "Zone")]
         public int IndexZone { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:n2}")]
+        [Display(Name = "Amount")]
         public double Amount
         {
             get
@@ -39,6 +51,7 @@ namespace MVC1006.Models
             set { }
         }
 
+        [Display(Name = "Weight")]
         public IDictionary<int, string> DictWeight
         {
             get
@@ -58,6 +71,7 @@ namespace MVC1006.Models
             }
         }
 
+        [Display(Name = "Zone")]
         public IDictionary<int, string> DictZone
         {
             get
@@ -84,6 +98,7 @@ namespace MVC1006.Models
             { 24, 39.0, 46.0},
         };
 
+        [Display(Name = "Date & Time")]
         public DateTime ParcelDateTime
         {
             get
@@ -94,16 +109,24 @@ namespace MVC1006.Models
             set { }
         }
 
+        [Display(Name = "View Date & Time")]
+        public DateTime ViewDateTime { get; set; }
+
+
+        [Display(Name = "Parcel Id")]
         public string ParcelId
         {
             get
             {
                 string hexTicks = DateTime.Now.Ticks.ToString("X");
 
-                return hexTicks.Substring(hexTicks.Length - 15, 10);
+                return hexTicks.Substring(hexTicks.Length - 15, 9);
             }
 
             set { }
         }
+
+        [Display(Name = "View Id")]
+        public string ViewId { get; set; }
     }
 }
