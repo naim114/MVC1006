@@ -1,0 +1,100 @@
+﻿@model MVC1006.Models.PosLajuParcel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>PosLajuParcel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SenderName" class="control-label"></label>
+                <input asp-for="SenderName" class="form-control" />
+                <span asp-validation-for="SenderName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SenderAddress" class="control-label"></label>
+                <input asp-for="SenderAddress" class="form-control" />
+                <span asp-validation-for="SenderAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SenderPhone" class="control-label"></label>
+                <input asp-for="SenderPhone" class="form-control" />
+                <span asp-validation-for="SenderPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SenderEmail" class="control-label"></label>
+                <input asp-for="SenderEmail" class="form-control" />
+                <span asp-validation-for="SenderEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReceiverName" class="control-label"></label>
+                <input asp-for="ReceiverName" class="form-control" />
+                <span asp-validation-for="ReceiverName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReceiverAddress" class="control-label"></label>
+                <input asp-for="ReceiverAddress" class="form-control" />
+                <span asp-validation-for="ReceiverAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReceiverPhone" class="control-label"></label>
+                <input asp-for="ReceiverPhone" class="form-control" />
+                <span asp-validation-for="ReceiverPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReceiverEmail" class="control-label"></label>
+                <input asp-for="ReceiverEmail" class="form-control" />
+                <span asp-validation-for="ReceiverEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IndexWeight" class="control-label"></label>
+                <input asp-for="IndexWeight" class="form-control" />
+                <span asp-validation-for="IndexWeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IndexZone" class="control-label"></label>
+                <input asp-for="IndexZone" class="form-control" />
+                <span asp-validation-for="IndexZone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParcelDateTime" class="control-label"></label>
+                <input asp-for="ParcelDateTime" class="form-control" />
+                <span asp-validation-for="ParcelDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ViewDateTime" class="control-label"></label>
+                <input asp-for="ViewDateTime" class="form-control" />
+                <span asp-validation-for="ViewDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParcelId" class="control-label"></label>
+                <input asp-for="ParcelId" class="form-control" />
+                <span asp-validation-for="ParcelId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ViewId" class="control-label"></label>
+                <input asp-for="ViewId" class="form-control" />
+                <span asp-validation-for="ViewId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

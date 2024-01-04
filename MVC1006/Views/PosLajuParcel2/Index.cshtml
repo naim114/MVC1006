@@ -1,0 +1,107 @@
+﻿@model IEnumerable<MVC1006.Models.PosLajuParcel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ViewId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ViewDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SenderName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SenderAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SenderPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SenderEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReceiverName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReceiverAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReceiverPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReceiverEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndexWeight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndexZone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ViewId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ViewDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SenderName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SenderAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SenderPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SenderEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceiverName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceiverAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceiverPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceiverEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DictWeight[item.IndexWeight])
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DictZone[item.IndexZone])
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ViewId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ViewId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ViewId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

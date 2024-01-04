@@ -46,9 +46,10 @@
                     <td>@Html.DisplayFor(y => x.DictWeight[x.IndexWeight]) </td>
                     <td>@Html.DisplayFor(y => x.Amount)</td>
                     <td>
-                        @Html.ActionLink("Details", "Details", new { id = x.ViewId })
-                        @Html.ActionLink("Edit", "Edit", new { id = x.ViewId })
-                        @Html.ActionLink("Delete", "Delete", new { id = x.ViewId })
+                        @Html.ActionLink("Details", "Details", new { id = x.ViewId }) |
+                        @Html.ActionLink("Edit", "Edit", new { id = x.ViewId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = x.ViewId }) |
+                        @Html.ActionLink("Mail", "SendMail", new { id = x.ViewId }) |
                     </td>
                 </tr>
             }

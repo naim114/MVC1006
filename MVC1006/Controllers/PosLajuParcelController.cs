@@ -5,6 +5,8 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Reflection.PortableExecutable;
 using System.Numerics;
+using MVC1006.MailSettings;
+using System.Collections.Generic;
 
 namespace MVC1006.Controllers
 {
@@ -262,6 +264,38 @@ namespace MVC1006.Controllers
             // }
             // else
                //  return View(p);
+        }
+
+        public IActionResult SendMail(string id)
+        {
+            IList<PosLajuParcel> dbList = GetDbList();
+            var result = dbList.First(x => x.ViewId == id);
+            
+            var subject = "Parcel Information " + result.ViewId; 
+            var body = "Parcel id: " + result.ViewId + "<br>" + 
+                "Date and time: " + result.ViewDateTime + "<br>" + 
+                "Sender name: " + result.SenderName + "<br>" +
+                "Receiver name: " + result. ReceiverName + "<br>" + 
+                "Receiver address: " + result. ReceiverAddress + "<br>" + 
+                "Receiver phone: " + result. ReceiverPhone + "<br>" + 
+                "Weight: " + result.DictWeight[result.IndexWeight] + "<br>" + 
+                "Zone: " +result.DictZone[result.IndexZone] + "<br>" + 
+                "Amount:" + result.Amount.ToString("c2");
+
+            var mail = new Mail(configuration);
+
+            if (mail.Send(configuration["Gmail:Username"], result.SenderEmail, subject, body))
+            {
+                ViewBag.Message = "Mail successfully sent to " + result.SenderEmail; 
+                ViewBag.Body = body;
+            }
+            else
+            {
+                ViewBag.Message = "Sent Mail Failed";
+                ViewBag.Body = "";
+            }
+
+            return View(result);
         }
     }
 }
