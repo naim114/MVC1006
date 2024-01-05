@@ -19,49 +19,9 @@ namespace MVC1006.Controllers
 
         public IActionResult Index()
         {
-            IList<PosLajuParcel> dbList = new List<PosLajuParcel>(); 
-            SqlConnection conn = new SqlConnection(configuration.GetConnectionString("ParcelConnStr"));
+            IList<PosLajuParcel> result = GetDbList();
 
-            string sql = @"SELECT ParcelId, ParcelDateTime, SenderName, SenderPhone, 
-            ReceiverName, ReceiverAddress, ReceiverPhone, IndexWeight, Amount 
-            FROM PosLajuParcels";
-            
-            SqlCommand cmd = new SqlCommand(sql, conn);
-
-            // try
-            // {
-            conn.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
-                
-            while (reader.Read())
-            {
-                dbList.Add(new PosLajuParcel()
-                {
-                    // ParcelId = reader.GetString(0),
-                    ViewId = reader.GetString(0),
-                    // ParcelDateTime = reader.GetDateTime(1),
-                    ViewDateTime = reader.GetDateTime(1),
-                    SenderName = reader.GetString(2),
-                    SenderPhone = reader.GetString(3),
-                    ReceiverName = reader.GetString(4),
-                    ReceiverAddress = reader.GetString(5),
-                    ReceiverPhone = reader.GetString(6),
-                    IndexWeight = reader.GetInt32(7),
-                    Amount = reader.GetDouble(8),
-                });
-            }
-                // }
-                // catch
-                // {
-                // RedirectToAction("Error");
-
-                // }
-                // finally
-                // {
-            conn.Close();
-                // }
-
-                return View(dbList);
+            return View(result);
         }
 
         public IActionResult Details(string id)
